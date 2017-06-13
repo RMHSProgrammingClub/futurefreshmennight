@@ -7,6 +7,8 @@ public class SceneFader : MonoBehaviour {
  
     public Image fadeOutUIImage;
     public float fadeSpeed = 0.8f; 
+
+	private const float SCENE_TIMEOUT = 20f;
  
     public enum FadeDirection
     {
@@ -35,7 +37,7 @@ public class SceneFader : MonoBehaviour {
 				sceneName = "_SCENE";
 				break;
 		}
-		StartCoroutine(WaitAndFade(10, sceneName));
+		StartCoroutine(WaitAndFade(SCENE_TIMEOUT, sceneName));
 	}
 
 	private IEnumerator WaitAndFade(float time, string scene) {
